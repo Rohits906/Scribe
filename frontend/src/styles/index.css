@@ -1,0 +1,108 @@
+:root {
+  --bg: #fbfaf8;
+  --fg: #1c1b19;
+  --muted: #6f6b64;
+  --border: #e2ded7;
+  --accent: #3d5afe;
+
+  color-scheme: light dark;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17161a;
+    --fg: #f2f0ec;
+    --muted: #a5a09a;
+    --border: #322f36;
+    --accent: #8c9eff;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.app {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+h1 {
+  font-size: 1.75rem;
+  letter-spacing: -0.02em;
+}
+
+.note-form {
+  display: grid;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+input,
+textarea,
+button {
+  font: inherit;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: transparent;
+  color: inherit;
+}
+
+button {
+  justify-self: start;
+  cursor: pointer;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.note-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.note {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+}
+
+.note h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.note p {
+  margin: 0 0 0.5rem;
+  white-space: pre-wrap;
+}
+
+.note time,
+.empty {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.error {
+  color: #d33;
+}
