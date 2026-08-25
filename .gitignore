@@ -1,6 +1,6 @@
 node_modules/
 dist/
-.env
-.env.local
-*.log
+.vite/
+*.zip
 .DS_Store
+.env
